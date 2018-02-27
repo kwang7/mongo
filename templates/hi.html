@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+
+  <body>
+    
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    {% for message in messages %}
+    {{ message }}
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+
+    <form action="/display" id="nameForm">
+      Name: <input type="text" name="name">
+      <br>
+    </form>
+    <button type="submit" form="nameForm">Submit</button>
+    <br><br><br>
+    <form action="/display" id="idForm">
+      ID: <input type="text" name="id">
+      <br>
+    </form>
+    <button type="submit" form="idForm">Submit</button>
+    <br><br><br>
+    <form action="/display" id="yearForm">
+      Year: <input type="text" name="year">
+      <br>
+    </form>
+    <button type="submit" form="yearForm">Sumtib</button>
+    <br><br><br>
+    <form action="/display" id="massYearForm">
+      Mass: <input type="text" name="mass">
+      <br> and <br>
+      Year: <input type="text" name="year">
+    </form>
+    <button type="submit" form="massYearForm">Sumbit</button>
+    <br><br><br>
+    <form action="/display" id="massRangeForm">
+      Minimum Mass: <input type="text" name="minMass">
+      <br>and<br>
+      Maximum Mass: <input type="text" name="maxMass">
+    </form>
+    <button type="submit" form="massRangeForm">Sumbit</button>
+
+
+
+
+
+  </body>
+
+</html>
