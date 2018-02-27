@@ -16,35 +16,32 @@ def submit():
         stuff = mon.findName(request.args["name"])
         for x in stuff:
             flash(x)
-
-    if( request.args["name"] ):
-        print request.args["name"]
-        stuff = mon.findName(request.args["name"])
-        for x in stuff:
-            flash(x)
-
-
-    if( request.arg["id"] ):
+            
+    
+            
+    elif( request.args["id"] ):
         stuff = mon.findId(request.args["id"])
         for x in stuff:
             flash(x)
-            
-    if( request.args["yr"] ):
+
+               
+    elif( request.args["yr"] ):
         print request.args["yr"]
         stuff = mon.findYear(request.args["yr"])
         for x in stuff:
             flash(x)
             
-    if( request.args["mass"] and request.args["year"] ):
+    elif( request.args["mass"] and request.args["year"] ):
         stuff = mon.my(request.args["mass"],request.args["year"])
         for x in stuff:
             flash(x)
 
-    if( request.args["minMass"] and request.args["maxMass"] ):
+    elif( request.args["minMass"] and request.args["maxMass"] ):
         stuff = mon.massRange(request.args["minMass"],request.args["maxMass"])
         for x in stuff:
             flash(x)
-            
+    else:
+        flash("huh")
     return render_template("hi.html",stuff=stuff)
 
 

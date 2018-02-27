@@ -114,25 +114,25 @@ def findName(name):
 
 
 def findId(id):
-    printstuff(nasa.find({"id":id}))
+    return nasa.find({"id":id})
 '''
 findId("4984")
 '''
 
 def findYear(year):
-    printstuff(nasa.find({"year": {"$regex": year}}))
+    return nasa.find({"year": {"$regex": year}})
 '''
 findYear("1775")
 '''
 
 def my(mass, year):
-    printstuff(nasa.find( {"$and": [ {"mass": mass}, {"year": {"$regex": year}}]}))
+    return nasa.find( {"$and": [ {"mass": mass}, {"year": {"$regex": year}}]})
 '''
 my(4000,"1890")
 '''
 
 def massRange(minM,maxM):
-    printstuff(nasa.find( {"$and" : [ {"mass": {"$lte": maxM} }, {"mass": {"$gte": minM} } ] } ))
+    return nasa.find( {"$and" : [ {"mass": {"$lte": maxM} }, {"mass": {"$gte": minM} } ] } )
 '''    
 massRange(4000,4500)
 '''
