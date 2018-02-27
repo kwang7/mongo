@@ -23,7 +23,6 @@ import json, urllib2
 def printstuff(ret):
     for re in ret:
         print re
-
 #BEGINNING OF PREVIOUS HW
 
 
@@ -106,13 +105,13 @@ for meteor in comet:
     
 def insert():
     nasa.insert_many(comet)
-insert() #add the data to the db
+#insert() #add the data to the db
 
 def findName(name):
-    printstuff(nasa.find({"name":name}))
-'''
-findName("Aachen")
-'''
+    return nasa.find({"name":name})
+
+#findName("Aachen")
+
 
 def findId(id):
     printstuff(nasa.find({"id":id}))
