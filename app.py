@@ -16,9 +16,7 @@ def submit():
         stuff = mon.findName(request.args["name"])
         for x in stuff:
             flash(x)
-            
-    
-            
+                
     elif( request.args["id"] ):
         stuff = mon.findId(request.args["id"])
         for x in stuff:
